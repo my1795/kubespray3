@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nicolaka-netshoot
+  name: nicolaka-netshoot
+spec:
+  containers:
+  - args:
+    - tail
+    - -f
+    - /dev/null
+    image: nicolaka/netshoot
+    imagePullPolicy: IfNotPresent
+    name: nicolaka-netshoot
+  nodeName: node-00
+  restartPolicy: Always
